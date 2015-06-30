@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Angular crud Index";
+}
+
+<script type="text/javascript">
+    $(function () {
+        console.log('jqueryWorking');
+    });
+
+</script>
+
+<div ng-app="myApp">
+    <h2>Index</h2>
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        {{ 2+3 }}
+
+        <input type="text" ng-model="name" />
+
+        Name: {{ fullName() }}
+    </div>
+
+    <h2>List</h2>
+    <div ng-controller="namesCtrl">
+        <input type="text" ng-model="searchName" />
+
+        <ul ng-repeat="x in customer | filter:searchName ">
+            <li>{{ 'name:' + x.CompanyName|uppercase }} {{ 'country: '+ x.Country }} </li>
+        </ul>
+
+    </div>
+</div>
+{{ 2+3}}
